@@ -14,9 +14,9 @@ if __name__ == "__main__":
 
     # Məlumatın URL-encoded formatına salınması
     data = urllib.parse.urlencode(values)
-    # Məlumatın baytlara çevrilməsi (POST sorğusu üçün vacibdir)
+    # Məlumatın baytlara çevrilməsi
     data = data.encode('ascii')
-    
+
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
         print(response.read().decode('utf-8'))
